@@ -1,79 +1,59 @@
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
-CIS 1200 Game Project README
-PennKey: Pareja
-=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=:=
+# **TwentyFortyEight Game**
 
-===================
-=: Core Concepts :=
-===================
+Welcome to **TwentyFortyEight**, a fully-featured implementation of the popular tile-sliding game. This project showcases a clean, modular design using core programming concepts and demonstrates skills in game development, GUI design, and robust testing.
 
-- List the four core concepts, the features they implement, and why each feature
-  is an appropriate use of the concept. Incorporate the feedback you got after
-  submitting your proposal.
+---
 
-  1. 2D Arrays:
-  Feature Implemented: The game grid is represented as a 4x4 2D array.
-  Reason: This efficiently models the game board, allowing manipulation of the game state
+## **Features**
 
-  2. Collections:
-  Feature Implemented: Used a LinkedList in the merge function to handle tile merging.
-  Reason: A LinkedList provides a dynamic structure for processing merges without worrying about fixed
-  sizes or unnecessary overhead.
+### **Core Concepts**
+This project utilizes the following key programming concepts:
 
-  3. File I/O:
-  Feature Implemented: Serialization and deserialization of game state.
-  Reason: Custom methods for saving and loading the game state ensure persistence
-  and proper handling of edge cases, making the game state portable.
+1. **2D Arrays**  
+   - **Feature**: Represents the game grid as a 4x4 2D array.  
+   - **Reason**: Provides an efficient structure for modeling the board and manipulating the game state.
 
-  4.JUnit Testable Component:
-  Feature Implemented: Comprehensive unit tests for core logic, including movement, merging, scoring,
-  and game-over conditions.
-  Reason: Validates the correctness of the game logic independently of the GUI, ensuring robust
-  and predictable behavior.
+2. **Collections (LinkedList)**  
+   - **Feature**: Handles tile merging dynamically during gameplay.  
+   - **Reason**: The flexibility of a `LinkedList` ensures smooth processing without fixed size limitations or overhead.
 
-===============================
-=: File Structure Screenshot :=
-===============================
-- Include a screenshot of your project's file structure. This should include
-  all of the files in your project, and the folders they are in. You can
-  upload this screenshot in your homework submission to gradescope, named 
-  "file_structure.png".
+3. **File I/O**  
+   - **Feature**: Save and load game states using serialization.  
+   - **Reason**: Enables game state persistence with proper handling of edge cases for portability and reliability.
 
-=========================
-=: Your Implementation :=
-=========================
+4. **Unit Testing (JUnit)**  
+   - **Feature**: Comprehensive tests for core functionality (movement, merging, scoring, and game-over conditions).  
+   - **Reason**: Ensures correctness and predictability of game logic, independent of the GUI.
 
-- Provide an overview of each of the classes in your code, and what their
-  function is in the overall game.
+---
 
-TwentyFortyEightModel: Encapsulates the game logic and state, including movement, merging, and game-over detection.
-GameBoard: Implements the GUI for the game, handling rendering and user interactions.
-Direction: Enum representing movement directions (UP, DOWN, LEFT, RIGHT). DirectionTest, TwentyFortyEightModelTest,
-RunTwentyFortyEight: Runs the game
-GameBoardTest: Test classes ensuring the correctness of logic and GUI.
-DirectionTest: Test Direction works properly
-TwentyFortyEightModelTest: Test if the game's functionalities are correct.
+## **How It Works**
 
+### **Game Flow**
+- **Objective**: Combine tiles of the same number until you reach 2048!
+- **Controls**: Use arrow keys (UP, DOWN, LEFT, RIGHT) to slide tiles and merge them.
 
-- Were there any significant stumbling blocks while you were implementing your
-  game (related to your design, or otherwise)?
+### **Core Components**
+- **`TwentyFortyEightModel`**: Encapsulates game logic, including movement, merging, scoring, and game-over detection.
+- **`GameBoard`**: Implements the graphical user interface (GUI), rendering the game board and managing user interactions.
+- **`Direction`**: An enum representing movement directions (UP, DOWN, LEFT, RIGHT).
 
-Merge Logic: Initially, tile merging caused scoring errors due to incorrect iteration.
-File I/O: Debugging deserialization edge cases required careful testing of malformed input.
+---
 
-- Evaluate your design. Is there a good separation of functionality? How well is
-  private state encapsulated? What would you refactor, if given the chance?
+## **Project Highlights**
 
-Separation of Functionality: Model and GUI are well-separated, adhering to the MVC pattern.
-Encapsulation: The game state and logic are encapsulated in the model, minimizing unintended external access.
-Future Refactoring: Could add a more modular approach to rendering for easier updates to the GUI.
+### **Challenges & Solutions**
+1. **Merge Logic**  
+   - **Challenge**: Scoring errors during tile merging due to incorrect iteration.  
+   - **Solution**: Refactored the merge logic to ensure accurate scoring and game-state updates.
 
-========================
-=: External Resources :=
-========================
+2. **File I/O**  
+   - **Challenge**: Debugging edge cases in deserialization of malformed input.  
+   - **Solution**: Extensive testing and input validation for robust file handling.
 
-- Cite any external resources (images, tutorials, etc.) that you may have used 
-  while implementing your game.
+### **Design Evaluation**
+- **Separation of Functionality**: Adheres to the **Model-View-Controller (MVC)** pattern, ensuring clear separation between game logic (Model) and GUI (View).  
+- **Encapsulation**: The game's state and logic are properly encapsulated within the `TwentyFortyEightModel` class, preventing unintended access.  
+- **Future Improvements**: Modularize the rendering logic further for easier GUI updates and additional customizations.
 
-JavaDocs for Swing components
-Official Java documentation for file I/O handling
+---
